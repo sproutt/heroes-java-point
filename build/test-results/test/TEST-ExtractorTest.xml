@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ExtractorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-11T15:10:29" hostname="baejongjins-MacBook-Pro.local" time="0.042">
+  <properties/>
+  <testcase name="testOneCoordinates" classname="ExtractorTest" time="0.041"/>
+  <testcase name="testMoreThanTwoCoordinate" classname="ExtractorTest" time="0.0"/>
+  <testcase name="testCoordinatesValues" classname="ExtractorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
