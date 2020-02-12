@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PointTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-12T11:15:30" hostname="LAPTOP-7IM6HBDA" time="0.083">
+  <properties/>
+  <testcase name="testPointRangeValuable" classname="PointTest" time="0.082"/>
+  <testcase name="testPointValOverTwo" classname="PointTest" time="0.001"/>
+  <testcase name="testPointValIsOne" classname="PointTest" time="0.0"/>
+  <system-out><![CDATA[Value is out of range. Point : (0,1)
+Values are more than two. Point : (8,10)
+Value is one. Point : (0,0)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
