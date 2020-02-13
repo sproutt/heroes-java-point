@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="point.PointTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-12T10:11:20" hostname="DESKTOP-4VF1CRI" time="0.005">
+  <properties/>
+  <testcase name="test_one" classname="point.PointTest" time="0.005"/>
+  <system-out><![CDATA[0>>>>> 
+1>>>>> 4
+?븳湲??븘 ?굹?삤?씪
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
