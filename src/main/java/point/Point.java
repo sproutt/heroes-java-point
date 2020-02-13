@@ -3,59 +3,40 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Point {
-
-    private int x;
-    private int y;
     private String input;
-    private String[] arrayXY;
+    private List<String> strListXY;
+    private ArrayList<Integer> valueXY;  //좌표를 추출하는 결과값
 
-    public void setting(String input){
-        String xy = input.substring(1,input.length()-1);
-        xy = xy.replaceAll(" ", "");
-       arrayXY = xy.split(",");
+    public void setting(String input){  //문자열에서 좌표값만 추출
 
+        input = input.substring(1,input.length()-1);
+        input = input.replaceAll(" ", "");
+
+        valueXY = new ArrayList<>(2);
+        valueXY.add(0,0); valueXY.add(1,0); //초기값 0으로 세팅
+
+        strListXY = Arrays.asList(input.split("\\s*,\\s*"));
     }
 
-    public String singleData(String input) {
+    public ArrayList<Integer> xyCoordinate(String input){
 
         setting(input);
+        int value;
 
-            //x,y중 하나의 좌표만 있는 경우 빈 곳에 0을 넣어준다.
-        if(!arrayXY[0].equals("")){
-           x = Integer.parseInt(arrayXY[0]);
-           y=0;
-            return "x:" + x + ", y:"+y;
+        for (int i =0;i<strListXY.size()&&i<2;i++){   //길이 최대 2개
+
+            if(!strListXY.get(i).equals("")) { //빈 값이 아닐때
+                value=Integer.parseInt(strListXY.get(i));
+                if(value<=0||value>=25) value=-1; // 범위를 넘어가면 -1을 넣어줌
+                valueXY.set(i,value);
+            }
         }
-            y = Integer.parseInt(arrayXY[1]);
-            x=0;
-            return "x:"+x+", y:"+y;
+        return valueXY;
     }
-
-
-
-
-    public String moreData(String input) {
-        setting(input);
-        //2개 이상 들어간 경우 첫번째 좌표를 x,두번째 좌표를 y로 하여 2개의 값만 추출한다.
-        x = Integer.parseInt(arrayXY[0]);
-        y = Integer.parseInt(arrayXY[1]);
-
-        return "x:" + x + ", y:"+y;
-    }
-
-    public String invalidData(String input) {
-        setting(input);
-        x = Integer.parseInt(arrayXY[0]);
-        y = Integer.parseInt(arrayXY[1]);
-        //유효하지 않는 좌표에 -1을 넣어준다.
-        if(x<=0||x>=25) x=-1;
-        if(y<=0||y>=25) y=-1;
-
-        return "x:" + x + ", y:"+y;
-    }
-
-
-
 
 }
