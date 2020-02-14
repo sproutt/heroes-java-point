@@ -53,35 +53,20 @@ public class PointTest {
     }
 
     @Test
-    public void extractX() {
-        assertEquals(-1, po.extractX("(1,"));
-        assertEquals(-1, po.extractX("(0,1)"));
-        assertEquals(-1, po.extractX("(25,1)"));
-        assertEquals(-1, po.extractX("(100,21)"));
-        assertEquals(-1, po.extractX("(1,1,4)"));
-        assertEquals(-1, po.extractX("12"));
+    public void extract() {
+        assertNull(Point.extract("(1,"));
+        assertNull(Point.extract("(0,1)"));
+        assertNull(Point.extract("(25,1)"));
+        assertNull(Point.extract("(100,21)"));
+        assertNull(Point.extract("(1,1,4)"));
+        assertNull(Point.extract("12"));
 
-        assertEquals(1, po.extractX("(1,2)"));
-        assertEquals(1, po.extractX("(1,24)"));
-        assertEquals(24, po.extractX("(24,7)"));
-    }
-
-    @Test
-    public void extractY() {
-        assertEquals(-1, po.extractY("(1,"));
-        assertEquals(-1, po.extractY("(0,1)"));
-        assertEquals(-1, po.extractY("(25,1)"));
-        assertEquals(-1, po.extractY("(100,21)"));
-        assertEquals(-1, po.extractY("(1,1,4)"));
-        assertEquals(-1, po.extractY("12"));
-
-        assertEquals(2, po.extractY("(1,2)"));
-        assertEquals(24, po.extractY("(1,24)"));
-        assertEquals(7, po.extractY("(24,7)"));
+//        assertEquals(Point.extract("(1,2)"), new Point(1,2));
+//        assertEquals(new Point(1,24), Point.extract("(1,24)"));
+//        assertEquals(new Point(24,7), Point.extract("(24,7)"));
     }
 
     @After
     public void tearDown() {
-        po = null;
     }
 }

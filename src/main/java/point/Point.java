@@ -5,28 +5,29 @@ public class Point {
     private int x;
     private int y;
 
-    public static boolean isValidInput(String txt){
-        return txt.matches("^[(]([1-9]|[1-2][0-4])[,]([1-9]|[1-2][0-4])[)]$");
-    }
-    public int extractX(String txt){
-        if (isValidInput(txt)){
-            this.x = Integer.parseInt(txt.substring(1, txt.indexOf(',')));
-            return this.x;
-        } else {
-            return -1;
-        }
+    Point(){ }
+    Point(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
-    public int extractY(String txt){
+    static boolean isValidInput(String txt){
+        return txt.matches("^[(]([1-9]|[1-2][0-4])[,]([1-9]|[1-2][0-4])[)]$");
+    }
+
+    static Point extract(String txt){
+
+        Point point = new Point();
+
         if (isValidInput(txt)){
-            this.y = Integer.parseInt(txt.substring(txt.indexOf(',')+1, txt.length()-1));
-            return this.y;
+            point.x = Integer.parseInt(txt.substring(1, txt.indexOf(',')));
+            point.y = Integer.parseInt(txt.substring(txt.indexOf(',')+1, txt.length()-1));
+            return point;
         } else {
-            return -1;
+            return null;
         }
     }
 
     public static void main(String[] args){
-
     }
 }
