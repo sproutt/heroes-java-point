@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/heroes-java-racing-game.iml" filepath="$PROJECT_DIR$/.idea/modules/heroes-java-racing-game.iml" group="heroes-java-racing-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/heroes-java-racing-game_main.iml" filepath="$PROJECT_DIR$/.idea/modules/heroes-java-racing-game_main.iml" group="heroes-java-racing-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/heroes-java-racing-game_test.iml" filepath="$PROJECT_DIR$/.idea/modules/heroes-java-racing-game_test.iml" group="heroes-java-racing-game" />
+    </modules>
+  </component>
+</project>
