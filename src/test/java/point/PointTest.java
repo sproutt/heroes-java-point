@@ -1,0 +1,76 @@
+package point;
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PointTest {
+
+    @Before
+    public void setUp() {
+    }
+
+    @Test
+    public void isValidInput_Normal() {
+        assertTrue(new Point("(1,1)").isValidInput());
+        assertTrue(new Point("(12,1)").isValidInput());
+        assertTrue(new Point("(12,12)").isValidInput());
+        assertTrue(new Point("(1,24)").isValidInput());
+        assertTrue(new Point("(24,1)").isValidInput());
+        assertTrue(new Point("(24,24)").isValidInput());
+    }
+
+    @Test
+    public void isValidInput_OnlyOne() {
+        // Case 1 - x, y 좌표 값 하나만 입력하는 경우
+        assertFalse(new Point("(1,)").isValidInput());
+        assertFalse(new Point("(,1)").isValidInput());
+        assertFalse(new Point("(12,)").isValidInput());
+        assertFalse(new Point("(,12)").isValidInput());
+        assertFalse(new Point("(1)").isValidInput());
+        assertFalse(new Point("1,)").isValidInput());
+        assertFalse(new Point("(,1)").isValidInput());
+    }
+
+    @Test
+    public void isValidInput_MoreThanTwo() {
+        // Case 2 - x, y 좌표 값 하나만 입력하는 경우
+        assertFalse(new Point("(1,2,3)").isValidInput());
+        assertFalse(new Point("(3,3,5,1)").isValidInput());
+    }
+
+    @Test
+    public void isValidInput_InvalidValue() {
+        // Case 3 - 유효하지 않은 값을 입력하는 경우
+        assertFalse(new Point("(0,0)").isValidInput());
+        assertFalse(new Point("(0,25)").isValidInput());
+        assertFalse(new Point("(25,0)").isValidInput());
+        assertFalse(new Point("(25,25)").isValidInput());
+        assertFalse(new Point("(-1,0)").isValidInput());
+        assertFalse(new Point("(0,-1)").isValidInput());
+        assertFalse(new Point("(-25,0)").isValidInput());
+        assertFalse(new Point("(-25,-25)").isValidInput());
+        assertFalse(new Point("(100,1)").isValidInput());
+        assertFalse(new Point("(1,100)").isValidInput());
+        assertFalse(new Point("(100,100)").isValidInput());
+    }
+
+    @Test
+    public void extract() {
+//        assertNull(Point.extract("(1,"));
+//        assertNull(Point.extract("(0,1)"));
+//        assertNull(Point.extract("(25,1)"));
+//        assertNull(Point.extract("(100,21)"));
+//        assertNull(Point.extract("(1,1,4)"));
+//        assertNull(Point.extract("12"));
+
+//        assertEquals(Point.extract("(1,2)"), new Point(1,2));
+//        assertEquals(new Point(1,24), Point.extract("(1,24)"));
+//        assertEquals(new Point(24,7), Point.extract("(24,7)"));
+    }
+
+    @After
+    public void tearDown() {
+    }
+}
