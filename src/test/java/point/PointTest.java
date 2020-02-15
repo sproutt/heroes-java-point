@@ -1,15 +1,16 @@
 package point;
 
 import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
+//import org.junit.After;
+//import org.junit.Before;
 
 public class PointTest {
 
-    @Before
-    public void setUp() {
-    }
+//    @Before
+//    public void setUp() { }
 
     @Test
     public void isValidInput_Normal() {
@@ -57,7 +58,12 @@ public class PointTest {
     }
 
     @Test
-    public void extract() {
+    public void extractCoordinates() throws Exception {
+        Point point = new Point("(2,3)");
+        point.extractCoordinates();
+        assertEquals(2, point.getX());
+        assertThat(point.getY()).isEqualTo(3);
+    }
 //        assertNull(Point.extract("(1,"));
 //        assertNull(Point.extract("(0,1)"));
 //        assertNull(Point.extract("(25,1)"));
@@ -68,9 +74,7 @@ public class PointTest {
 //        assertEquals(Point.extract("(1,2)"), new Point(1,2));
 //        assertEquals(new Point(1,24), Point.extract("(1,24)"));
 //        assertEquals(new Point(24,7), Point.extract("(24,7)"));
-    }
 
-    @After
-    public void tearDown() {
-    }
+//    @After
+//    public void tearDown() { }
 }
