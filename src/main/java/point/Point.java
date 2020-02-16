@@ -10,8 +10,8 @@ class Point {
         this.rawString = rawString;
     }
 
-    public int getX() { return x; }
-    public int getY() { return y; }
+    int getX() { return x; }
+    int getY() { return y; }
 
     boolean isValidInput(){
         return this.rawString.matches("^[(]([1-9]|[1-2][0-4])[,]([1-9]|[1-2][0-4])[)]$");

@@ -63,18 +63,12 @@ public class PointTest {
         point.extractCoordinates();
         assertEquals(2, point.getX());
         assertThat(point.getY()).isEqualTo(3);
-    }
-//        assertNull(Point.extract("(1,"));
-//        assertNull(Point.extract("(0,1)"));
-//        assertNull(Point.extract("(25,1)"));
-//        assertNull(Point.extract("(100,21)"));
-//        assertNull(Point.extract("(1,1,4)"));
-//        assertNull(Point.extract("12"));
 
-//        assertEquals(Point.extract("(1,2)"), new Point(1,2));
-//        assertEquals(new Point(1,24), Point.extract("(1,24)"));
-//        assertEquals(new Point(24,7), Point.extract("(24,7)"));
+        point = new Point("(211,3)");
+        point.extractCoordinates();
+    }
 
 //    @After
 //    public void tearDown() { }
+
 }
