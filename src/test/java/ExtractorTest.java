@@ -1,35 +1,37 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 
 public class ExtractorTest {
 
-    Extractor extractor;
-
-    String expression;
-
-    @Before
-    public void setup(){
-        extractor = new Extractor();
-        expression = "(8,10)";
+    @Test
+    public void 하나의인자가들어왔을때테스트() throws Exception {
+        assertThatThrownBy(() -> {
+            Extractor.extractCoordinate("(3)");
+        }).isInstanceOf(OutOfCoordinateNumberException.class);
     }
 
     @Test
-    public void testOneCoordinates(){
-        assertThat(extractor.extractCoordinate(expression).size()).isNotEqualTo(1);
+    public void 두개의이상의인자가들어왔을때테스트() throws Exception {
+        assertThat(Extractor.extractCoordinate("(3,4)"))
+                .isEqualTo(new ArrayList<Integer>(Arrays.asList(3,4)));
+        assertThatThrownBy(() -> {
+            Extractor.extractCoordinate("(3,4,5)");
+        }).isInstanceOf(OutOfCoordinateNumberException.class);
     }
 
-    @Test
-    public void testMoreThanTwoCoordinate(){
-        assertThat(extractor.extractCoordinate(expression).size())
-                .isLessThanOrEqualTo(2);
-    }
 
     @Test
-    public void testCoordinatesValues(){
-        for(Integer number:extractor.extractCoordinate(expression))
-            assertThat(number).isBetween(1,24);
+    public void 메소드인자의값범위테스트() throws Exception {
+        assertThatThrownBy(() -> {
+            Extractor.extractCoordinate("(1,25)");
+        }).isInstanceOf(OutOfCoordinateValueException.class);
     }
+
 }
