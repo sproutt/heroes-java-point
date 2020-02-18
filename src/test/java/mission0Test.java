@@ -5,11 +5,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class mission0Test {
-    mission0 m;
+    Mission0 m;
 
     @Before
     public void setUp() throws Exception {
-        m = new mission0();
+        m = new Mission0();
     }
 
     @After
@@ -18,20 +18,20 @@ public class mission0Test {
     }
 
     @Test
-    public void case1() {
-        assertEquals("fail", m.readCoords("(1, )"));
-        assertEquals("fail", m.readCoords("( , 1)"));
+    public void 하나의_입력만_받았을_경우_예외처리된다() {
+        assertEquals("fail", m.readCoordinates("(1, )"));
+        assertEquals("fail", m.readCoordinates("( , 1)"));
     }
 
     @Test
-    public void case2() {
-        assertEquals("x = 1, y = 1", m.readCoords("(1, 1)"));
-        assertEquals("x = 24, y = 24", m.readCoords("(24, 24)"));
+    public void 정상적인_입력을_받았을_경우_두개값이_출력된다() {
+        assertEquals("x = 1, y = 1", m.readCoordinates("(1, 1)"));
+        assertEquals("x = 24, y = 24", m.readCoordinates("(24, 24)"));
     }
 
     @Test
-    public void case3() {
-        assertEquals("fail", m.readCoords("(0, 0)"));
-        assertEquals("fail", m.readCoords("(25, 25)"));
+    public void 범위_바깥의_입력을_받았을_경우_예외처리된다() {
+        assertEquals("fail", m.readCoordinates("(0, 0)"));
+        assertEquals("fail", m.readCoordinates("(25, 25)"));
     }
 }
