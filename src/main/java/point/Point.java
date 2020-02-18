@@ -14,15 +14,12 @@ public class Point {
         input = input.replaceAll(" ", "");
         inputCoordinate = Arrays.asList(input.split("\\s*,\\s*"));
         valueXY = new ArrayList<>(2);
-
         valueXY.add(0, 0);
         valueXY.add(1, 0);
-
     }
 
     public List<Integer> extractXY(String input) {
         int value;
-
         setInput(input);
 
         for (int i = 0; i < inputCoordinate.size() && i < 2; i++) {

@@ -22,7 +22,7 @@ public class PointTest {
     }
 
     @Test
-    public void 값이_안들어간_좌표에는_0을_넣어준다() {
+    public void 한개_입력시_값이없는_좌표에_0을_넣어주는_Test() {
         result.set(0, 12);
         result.set(1, 0);
         assertEquals(point.extractXY("(12, )"), result);
@@ -34,7 +34,7 @@ public class PointTest {
 
 
     @Test
-    public void 맨_처음_2개의_값만_추출한다() {
+    public void 두개이상_입력시_처음_2개값만_추출하는_Test() {
         result.set(0, 12);
         result.set(1, 11);
         assertEquals(point.extractXY("(12,11,10,9)"), result);
@@ -49,7 +49,7 @@ public class PointTest {
     }
 
     @Test
-    public void 유효하지_않는_좌표에는_minus_one를_넣어준다() {
+    public void 유효하지_않는_좌표에는_minus_one를_넣어주는_Test() {
         result.set(0, -1);
         result.set(1, -1);
         assertEquals(point.extractXY("(-46,123)"), result);
