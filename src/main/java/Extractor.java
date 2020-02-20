@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Extractor {
-    public static List<Integer> extractCoordinate(String expression) throws Exception {
+    public List<Integer> extractCoordinate(String expression) throws Exception {
         List<Integer> numbers = new ArrayList<>();
         for (String element : expression.split("\\(|,|\\)")) {
             if(!element.isEmpty()) {
@@ -19,5 +19,6 @@ public class Extractor {
         }
         return numbers;
     }
+
 
 }
