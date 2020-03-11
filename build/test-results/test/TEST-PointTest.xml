@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PointTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-02-15T04:28:11" hostname="DESKTOP-E7UEKO6" time="0.02">
+  <properties/>
+  <testcase name="result" classname="PointTest" time="0.004"/>
+  <testcase name="TestOne" classname="PointTest" time="0.005"/>
+  <testcase name="TestTwo" classname="PointTest" time="0.004"/>
+  <testcase name="TestThree" classname="PointTest" time="0.003"/>
+  <system-out><![CDATA[Just One Write.
+Point@65b5af33
+More than Two
+Point@2d9aa294
+Not Valid
+Point@ddbb574
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
