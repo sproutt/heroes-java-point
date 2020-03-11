@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ExtractorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-19T02:07:34" hostname="baejongjins-MacBook-Pro.local" time="0.094">
+  <properties/>
+  <testcase name="하나의인자가들어왔을때테스트" classname="ExtractorTest" time="0.065"/>
+  <testcase name="메소드인자의값범위테스트" classname="ExtractorTest" time="0.001"/>
+  <testcase name="두개의이상의인자가들어왔을때테스트" classname="ExtractorTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
